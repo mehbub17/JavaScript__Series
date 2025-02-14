@@ -25,9 +25,17 @@ div1.addEventListener('click',()=>{
     console.log("Parent will be called first as event capturing is done here");
 });
 
+
+//stop immediate--> only that event associated with the element will get executed in which eventListener stopImmediatePropagation is called.
+
+btn1.addEventListener("click",(event)=>{
+    event.stopImmediatePropagation();
+    console.log("clicked_1");
+});
 btn1.addEventListener("click",(event)=>{
 
-    event.stopPropagation();
 
-    console.log("now propagation wont happen as stop propagation is called here");
+
+    console.log("clicked_2");
 });
+
