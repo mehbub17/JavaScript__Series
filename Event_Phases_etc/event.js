@@ -3,16 +3,16 @@
 
 
 
-var div  = document.querySelector("body");
+// var div  = document.querySelector("body");
 
-div.addEventListener("click",()=>{
-    console.log("now this will be called after it child gets called");
-})
+// div.addEventListener("click",()=>{
+//     console.log("now this will be called after it child gets called");
+// })
 
-var button = document.querySelector("button");
-button.addEventListener("click",()=>{
-    console.log("Button clicked-->this will be called first as event propagates from child to parent __also known as event bubbling");
-})
+// var button = document.querySelector("button");
+// button.addEventListener("click",()=>{
+//     console.log("Button clicked-->this will be called first as event propagates from child to parent __also known as event bubbling");
+// })
 
 
 
@@ -23,8 +23,11 @@ var btn1 = document.querySelector("#btn_1");
 
 div1.addEventListener('click',()=>{
     console.log("Parent will be called first as event capturing is done here");
-},true);
+});
 
-btn1.addEventListener("click",()=>{
-    console.log("Child tag will be called after parent as event capturing is done for this block");
-},true);
+btn1.addEventListener("click",(event)=>{
+
+    event.stopPropagation();
+
+    console.log("now propagation wont happen as stop propagation is called here");
+});
