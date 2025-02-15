@@ -17,7 +17,8 @@ const fun_1 = ()=>{
 const fun_2 = ()=>{
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve("function two is resolved and data is returned");
+            const data = [1,2,3,4];
+            resolve(data);
         },3000);
     });
 }
@@ -41,3 +42,10 @@ Promise.all([
 })
 .catch(error=>console.log("Error in promise",error))
 .finally(()=>console.log("All Done"));
+
+
+const data = await fun_2();
+
+data.forEach(element => {
+    console.log(element*2);
+});
