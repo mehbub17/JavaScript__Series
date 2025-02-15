@@ -1,10 +1,10 @@
 
-const samosa = a => b => c =>{
-    return `${a}+${b}+${c} = samosa`;
-} 
 
 
-const item = samosa("garam_masal")("aalu desi")("desi aata");
+const mul = (x,y)=>x*y;
 
-console.log(item);
+const curry_mul = x=>y=>x*y;
 
+
+console.log(mul(2,3));
+console.log(curry_mul(2)(3));
